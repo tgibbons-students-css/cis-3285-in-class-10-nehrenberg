@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using CurrencyTrader.AdoNet;
 using CurrencyTrader.Contracts;
+using CurrencyTrader;
 
 namespace CurrencyTrader.Gui
 {
@@ -32,7 +33,7 @@ namespace CurrencyTrader.Gui
             //var logger = new GuiLogger(lbStatus.Items);
 
             //var tradeDataProvider = new StreamTradeDataProvider(tradeStream);
-            var tradeDataProvider = new UrlTradeDataProvider(tradeUrl);
+            var tradeDataProvider = new AdjustTradeDataProvider(tradeUrl);
 
             var tradeValidator = new SimpleTradeValidator(logger);
             var tradeMapper = new SimpleTradeMapper();
